@@ -1,5 +1,11 @@
-# persistance-issue
-## Reproducing c3p0 connection pool leak
+# Reproducing c3p0 connection pool leak
+
+## Prerequisites
+- Java 17 (or later)
+- MySQL instance running in the localhost
+- Apache Maven
+
+## Starting the app
 
 run the app by `mvn spring-boot:run`
 
