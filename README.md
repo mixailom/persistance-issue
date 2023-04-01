@@ -5,6 +5,32 @@
 - MySQL instance running in the localhost
 - Apache Maven
 
+## Database preparation
+
+### Create database schema
+`CREATE DATABASE c3p0test;`
+
+### Create user
+`CREATE USER 'test1'@'localhost' IDENTIFIED BY 'test1';`  
+
+### Create table
+```
+CREATE TABLE c3p0test.employee (  
+id int(11) NOT NULL AUTO_INCREMENT,  
+name varchar(35) DEFAULT NULL,  
+age int(11) DEFAULT NULL,  
+PRIMARY KEY (`id`)  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+### Grant privileges
+
+`GRANT INSERT, UPDATE, DELETE, SELECT ON c3p0test.employee TO 'test1'@'localhost';`
+
+### Insert test data
+`INSERT INTO c3p0test.employee (name, age) VALUES ('John Smith', '20');`  
+`INSERT INTO c3p0test.employee (name, age) VALUES ('Donald Duck', '35');`  
+
 ## Starting the app
 
 run the app by `mvn spring-boot:run`
