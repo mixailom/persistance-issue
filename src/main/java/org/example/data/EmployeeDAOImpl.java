@@ -28,7 +28,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     List<Employee> res = this.jdbcTemplate.query(SELECT_ALL_QUERY, new EmployeeMapper());
       try {
       connectionsGraveYard.add(jdbcTemplate.getDataSource().getConnection());
-      log.info("Connections in connectionsGraveYeard: " + connectionsGraveYard.size());
+      log.info("Connections in connectionsGraveYard: " + connectionsGraveYard.size());
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
